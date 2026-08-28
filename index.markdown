@@ -18,13 +18,26 @@ permalink: /
 
 ---
 
-| 항목 | 내용 |
-|------|------|
-| 사업명 | AI 기반 채용 프로세스 자동화 및 지원자 통합 관리 플랫폼 |
-| 시스템명 | Arda (Eval-ATS) |
-| 개발 기간 | 2026.08.20 ~ 2026.10.27 (10주, 5스프린트) |
-| 개발 인원 | 5명 (팀 SEUK) — 진수택·이재우·이우정·김민아·박소연 |
-| 개발 방법론 | 애자일 스크럼 (2주 단위 스프린트) |
+<style>
+.cv-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; }
+.cv-table td { padding: 11px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); vertical-align: top; }
+.cv-label { width: 9.5em; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; opacity: 0.75; white-space: nowrap; }
+.cv-main { font-size: 0.95rem; font-weight: 700; }
+.cv-sub { font-size: 0.78rem; opacity: 0.6; margin-top: 3px; letter-spacing: 0.02em; }
+.cv-table a { color: #e0af68; text-decoration: none; font-weight: 700; }
+.cv-table a:hover { text-decoration: underline; }
+</style>
+
+<table class="cv-table">
+<tr><td class="cv-label">사업명</td><td><div class="cv-main">AI 기반 채용 프로세스 자동화 및 지원자 통합 관리 플랫폼</div></td></tr>
+<tr><td class="cv-label">시스템명</td><td><div class="cv-main">Arda (Eval-ATS)</div></td></tr>
+<tr><td class="cv-label">개발 기간</td><td><div class="cv-main">2026년 8월 20일 (목) ~ 2026년 10월 27일 (화)</div><div class="cv-sub">총 69일 · 10주, 애자일 스크럼 (2주 1스프린트 · 총 5스프린트)</div></td></tr>
+<tr><td class="cv-label">개발팀 : SEUK</td><td><div class="cv-main">진수택 · 이재우 · 이우정 · 김민아 · 박소연</div><div class="cv-sub">5명</div></td></tr>
+<tr><td class="cv-label">문서 작성일</td><td><div class="cv-main">{{ site.time | date: "%Y년 %-m월 %-d일" }}</div><div class="cv-sub">push 시 자동 갱신 (마지막 배포 기준)</div></td></tr>
+<tr><td class="cv-label">깃허브 주소</td><td><div class="cv-main"><a href="https://github.com/Team-Seuk/Arda">github.com/Team-Seuk/Arda</a></div><div class="cv-sub">문서 저장소 — <a href="https://github.com/suvisdev/ats.suvisdev.cloud">github.com/suvisdev/ats.suvisdev.cloud</a></div></td></tr>
+<tr><td class="cv-label">문서 사이트</td><td><div class="cv-main"><a href="https://ats.suvisdev.cloud">ats.suvisdev.cloud</a></div></td></tr>
+<tr><td class="cv-label">데모 사이트</td><td><div class="cv-main"><a href="https://arda-nu.vercel.app">arda-nu.vercel.app</a></div><div class="cv-sub">커스텀 도메인 arda.seuk.cloud 적용 중 · API api.arda.seuk.cloud</div></td></tr>
+</table>
 
 ---
 
