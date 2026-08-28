@@ -74,7 +74,9 @@ details summary:hover { opacity: 1; text-decoration: underline; }
      status: todo         # todo | doing | done
      done: 2026-09-02     # 완료일 — done으로 바꿀 때 함께 기입 (개발 로그 자동 집계용)
      due: 2026-09-04      # 마감 (선택)
-     note: ""             # 한 줄 메모 (선택 — 제목·메모에 ¦ 문자는 금지)
+     note: ""             # 한 줄 메모 (선택 — 제목·메모·상세에 ¦ 문자는 금지)
+     detail: |            # 상세 요약 (선택) — 개발 로그에서 클릭해 들어가는 상세 페이지에 표시
+       무엇을 어떻게 바꿨는지 2~4줄
    ```
 3. **push 전 `git pull --rebase`.** 서로 다른 파일이라 rebase가 항상 깨끗하게 통과한다. 충돌이 났다면 파일 소유자 버전 우선, `push --force` 금지.
 4. **포스트(`_posts/`)도 같은 원칙**: 파일명을 `YYYY-MM-DD-<아이디>-<주제>.markdown`으로 만들어 한 파일을 한 사람만 만지게 한다.

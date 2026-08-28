@@ -9,18 +9,26 @@ cards:
     status: done
     done: 2026-08-28
     due: 2026-09-04
+    detail: |
+      지원자 카드를 드래그해 단계(지원 접수→서류 검토→면접→최종)를 이동하는 메인 보드 UI — D2·D3.
   - title: "프론트 뼈대 (React 라우팅·레이아웃)"
     feature: "front"
     status: done
     done: 2026-08-28
+    detail: |
+      React(Vite·TS) 라우팅·공통 레이아웃 뼈대 구축 — 목업의 React 전환 기반.
   - title: "API 연동 — 로그인·공고·대시보드·지원자·평가"
     feature: "큐7"
     status: done
     done: 2026-08-28
+    detail: |
+      백엔드 실제 API 5개 영역(로그인·공고·대시보드·지원자·평가) 연동 — 목데이터 탈피(큐7).
   - title: "공고의 지원자 화면 + 상세 패널·일괄 단계 변경"
     feature: "D1·D4·D9"
     status: done
     done: 2026-08-28
+    detail: |
+      공고별 지원자 목록 화면과 상세 패널, 지원자 일괄 단계 변경 — D1·D4·D9.
   - title: "면접 일정 실연동"
     feature: "front"
     status: todo

@@ -8,6 +8,9 @@ cards:
     feature: "W1-4"
     status: done
     done: 2026-08-27
+    detail: |
+      AWS에 백엔드·DB 1차 실배포 — W2 마일스톤을 1주 앞당겨 완료(08/27, 상세는 07-deploy.md).
+      Docker Compose 로컬 환경과 동일 구성으로 배포 절차 확립.
   - title: "주간 다이제스트 (금요일 — 그 주 변경 요약)"
     feature: "운영"
     status: doing

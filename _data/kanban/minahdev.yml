@@ -10,26 +10,36 @@ cards:
     done: 2026-08-25
     due: 2026-09-04
     note: "08/25 완료 — B2 #32 · D1 #48 · D6 #72"
+    detail: |
+      전환기 백엔드 분담분 — B2(#32)·D1(#48)·D6(#72) 3건 구현·머지(08/25).
   - title: "앱 스택 Flutter 재확정 (ADR-0010)"
     feature: "ADR-0010"
     status: done
     done: 2026-08-28
     note: "iOS 를 시연 범위에서 빼면서 Expo 기각 근거가 사라졌다 — #110 · #113"
+    detail: |
+      iOS를 시연 범위에서 제외하면서 Expo 채택 근거가 사라짐 — Flutter·Dart로 재확정(#110·#113), ADR-0010 갱신.
   - title: "Flutter 프로젝트·디자인 토큰·내비게이션 뼈대"
     feature: "큐 5"
     status: done
     done: 2026-08-28
     note: "05-design 토큰 Dart 이식 · IBM Plex Sans KR 번들 — #114"
+    detail: |
+      05-design 토큰을 Dart로 이식, IBM Plex Sans KR 폰트 번들, 내비게이션 뼈대 구성(#114).
   - title: "지원자 리스트 화면 (목데이터)"
     feature: "큐 6"
     status: done
     done: 2026-08-28
     note: "상단 바·공고명·단계 탭·카드 리스트 — #137"
+    detail: |
+      상단 바·공고명·단계 탭·지원자 카드 리스트 — 목데이터 기반 화면 완성(#137).
   - title: "지원자 상세·로그인 화면 (목데이터)"
     feature: "큐 6"
     status: done
     done: 2026-08-28
     note: "지원 정보·단계 변경 버튼·로그인 — #138 외"
+    detail: |
+      지원 정보·단계 변경 버튼이 있는 상세 화면과 로그인 화면 — 목데이터 기반(#138 외).
   - title: "Flutter 앱 M1 (조회·단계 변경·평가)"
     feature: "M1"
     status: doing

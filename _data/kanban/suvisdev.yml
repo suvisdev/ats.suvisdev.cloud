@@ -12,35 +12,58 @@ cards:
     status: done
     done: 2026-08-28
     note: "4개 엔드포인트 HTTP 레벨 테스트 + 경계값·보안 패턴"
+    detail: |
+      에이전트 4개 엔드포인트(summarize·chat·confirm·stt)를 HTTP 레벨에서 검증.
+      기본 동작 20개 + 엣지 21개 — 경계값, SQL injection, XSS, 권한 없는 접근, 빈 입력.
+      PR #141로 squash merge.
   - title: "E2E 엣지 케이스 8개 시나리오 실호출 검증"
     feature: "W1"
     status: done
     done: 2026-08-28
     note: "검색 0건, 모호한 요청, 잘못된 단계명, 삭제 요청, 공고 조회, 멀티턴 ID 추적, 특수문자"
+    detail: |
+      검색 0건("검색 결과 없음"+대안 제시) · 모호한 요청(도구 호출 없이 명확화 질문) · 잘못된 단계명(동명이인 확인 후 선택 유도) · 범위 밖 삭제 요청(미지원 안내) · 공고 목록 조회 · 멀티턴 3단계 ID 추적 · 특수문자(O'Brien) 검색.
+      8종 전부 PASS, 비용 실측 $0.083.
   - title: "프롬프트 튜닝 — ID 혼동 수정"
     feature: "PR#136"
     status: done
     done: 2026-08-28
     note: "agent.v1.md에 ID 참조 규칙 2줄 추가"
+    detail: |
+      E2E에서 대화가 길어지면 application_id를 엉뚱한 값(id=1)으로 참조하는 문제 발견.
+      agent.v1.md에 규칙 2줄 추가 — ① 직전 도구 결과에서 확인된 ID만 사용, ② "이 지원자" 지시어는 최근 조회 지원자 기준.
+      수정 후 정확한 ID(id=52) 참조 확인.
   - title: "한글 수사 오탐 방지 + 텍스트 채팅 재연결"
     feature: "PR#130"
     status: done
     done: 2026-08-28
     note: "entity_resolver 오탐 수정 + ADR-0015"
+    detail: |
+      entity_resolver가 한글 수사("첫 번째")를 오탐하던 문제 수정 후, 텍스트 채팅 경로에도 resolve_entities 재연결(A안).
+      결정 근거는 ADR-0015로 기록, PR #130 squash merge.
   - title: "E2E 데모 4단계 시나리오 (검색→조회→상태 변경→이메일 초안)"
     feature: "W1"
     status: done
     done: 2026-08-28
     note: "4단계 전부 실호출 성공, 비용 실측 $0.045"
+    detail: |
+      로컬 서버 실호출: ① "김도현 찾아줘"→동명이인 2명 안내 ② 상세 조회 ③ "서류심사로 옮겨줘"→후퇴 불가 안내+대안 ④ 이메일 초안→pending_action 반환(사람 확인 대기).
+      4단계 전부 정상, 비용 실측 합계 $0.045(Haiku).
   - title: "테스트 커버리지 보강 — 전체 185개"
     feature: "PR#133+#141"
     status: done
     done: 2026-08-28
     note: "prompts 12 + summarizer 10 + api_agent 41 등"
+    detail: |
+      신규: test_prompts 12(로더 resolve/render/variables) · test_summarizer 10 · api_agent TestClient 41.
+      전체 구성: entity_resolver 35, write_tools 19, stages 15, stt 15, cost 13 등 — 185개 전부 통과.
   - title: "STT 비용 로깅 통일 (채팅·요약·STT)"
     feature: "W1"
     status: done
     done: 2026-08-28
+    detail: |
+      STT(Whisper)에 비용 로깅이 빠져 있던 것 발견 — _estimate_stt_cost($0.006/분×오디오 길이) 구현, transcribe() 반환에 audio_duration_sec·cost_usd 추가.
+      채팅·요약·STT 3기능의 AI 원가 관측 체계 통일, ADR-0011에 실측 기록.
   - title: "목업 테스트 → 프론트 전달"
     feature: "W2"
     status: doing
