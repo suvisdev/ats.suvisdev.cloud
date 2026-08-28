@@ -7,6 +7,8 @@ permalink: /feedback/
 
 # 피드백 트래커
 
+**멘토·강사님 피드백**의 접수와 반영 이력을 추적한다 — 언제 어떤 피드백을 받았고, 언제 무엇을 수정했는지.
+
 <style>
 .fb-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 1rem 0 2rem; }
 .fb-table th, .fb-table td { border: 1px solid rgba(255,255,255,0.12); padding: 7px 9px; vertical-align: top; text-align: left; }
@@ -56,13 +58,13 @@ details summary:hover { opacity: 1; text-decoration: underline; }
 <details markdown="1">
 <summary>📖 사용 규칙 보기 (기록 방법)</summary>
 
-기록은 피드백을 처리하는 담당자가 `_data/feedback/<자기 GitHub 아이디>.yml`에 남긴다 — 칸반과 같은 원칙(한 사람 = 파일 하나)이라 git 충돌이 없다.
+멘토링·강의에서 받은 피드백을, **반영을 담당하는 팀원**이 `_data/feedback/<자기 GitHub 아이디>.yml`에 기록한다 — 칸반과 같은 원칙(한 사람 = 파일 하나)이라 git 충돌이 없다.
 
-1. **자기 파일만 수정한다.** 담당이 애매한 피드백은 팀 채널에서 담당을 정한 뒤 그 사람이 기록한다.
+1. **자기 파일만 수정한다.** 어느 도메인 소관인지 애매한 피드백은 팀 채널에서 담당을 정한 뒤 그 사람이 기록한다.
 2. **새 항목은 파일 맨 위에 추가**한다(최신순 유지). 형식:
    ```yaml
    - received: 2026-09-01      # 피드백 들어온 날짜
-     from: "09/04 중간점검"     # 출처 (선택 — 발표·데모·팀원·외부)
+     from: "09/04 중간점검"     # 출처 (예: 멘토링·강사 피드백·중간점검)
      content: "피드백 내용"
      status: todo               # todo(대기) | doing(수정 중) | done(반영 완료)
      fixed:                     # 수정한 날짜 — 반영 완료 시 기입
