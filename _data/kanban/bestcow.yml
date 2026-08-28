@@ -7,6 +7,7 @@ cards:
   - title: "실배포 1차 (W2 마일스톤 조기 완료)"
     feature: "W1-4"
     status: done
+    done: 2026-08-27
   - title: "주간 다이제스트 (금요일 — 그 주 변경 요약)"
     feature: "운영"
     status: doing

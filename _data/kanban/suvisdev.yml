@@ -10,13 +10,16 @@ cards:
   - title: "E2E 데모 4단계 시나리오 (검색→조회→상태 변경→이메일 초안)"
     feature: "W1"
     status: done
+    done: 2026-08-28
     note: "4단계 전부 실호출 성공, 비용 실측 $0.045"
   - title: "테스트 커버리지 보강 — 전체 134개"
     feature: "PR#133"
     status: done
+    done: 2026-08-28
   - title: "STT 비용 로깅 통일 (채팅·요약·STT)"
     feature: "W1"
     status: done
+    done: 2026-08-28
   - title: "목업 테스트 → 프론트 전달"
     feature: "W2"
     status: doing
