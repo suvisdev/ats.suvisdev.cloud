@@ -10,50 +10,48 @@ permalink: /feedback/
 **멘토·강사님 피드백**의 접수와 반영 이력을 추적한다 — 언제 어떤 피드백을 받았고, 언제 무엇을 수정했는지.
 
 <style>
-.fb-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 1rem 0 2rem; }
-.fb-table th, .fb-table td { border: 1px solid rgba(255,255,255,0.12); padding: 7px 9px; vertical-align: top; text-align: left; }
-.fb-table th { font-size: 0.72rem; letter-spacing: 0.04em; opacity: 0.8; white-space: nowrap; }
-.fb-owner { font-size: 0.66rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; color: #111; white-space: nowrap; }
-.fb-status { font-size: 0.66rem; font-weight: 700; padding: 1px 8px; border-radius: 4px; white-space: nowrap; }
+.fb-item { border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; margin: 1rem 0; overflow: hidden; }
+.fb-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 14px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.fb-owner { font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: #111; white-space: nowrap; }
+.fb-status { font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 5px; white-space: nowrap; }
 .fb-todo { background: rgba(247,118,142,0.2); color: #f7768e; }
 .fb-doing { background: rgba(224,175,104,0.2); color: #e0af68; }
 .fb-done { background: rgba(158,206,106,0.2); color: #9ece6a; }
-.fb-from { font-size: 0.68rem; opacity: 0.6; }
-.fb-date { white-space: nowrap; }
+.fb-dates { font-size: 0.74rem; opacity: 0.65; margin-left: auto; white-space: nowrap; }
+.fb-block { padding: 12px 14px; }
+.fb-block + .fb-block { border-top: 1px dashed rgba(255,255,255,0.1); }
+.fb-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; opacity: 0.55; margin-bottom: 4px; }
+.fb-block p { margin: 0; font-size: 0.86rem; line-height: 1.7; }
+.fb-fix { border-left: 3px solid #9ece6a; background: rgba(158,206,106,0.05); }
+.fb-empty { opacity: 0.5; text-align: center; padding: 2rem 0; font-size: 0.85rem; }
 details { margin-top: 1.5rem; }
 details summary { cursor: pointer; font-size: 0.78rem; opacity: 0.6; }
 details summary:hover { opacity: 1; text-decoration: underline; }
 </style>
 
-<table class="fb-table">
-  <thead>
-    <tr>
-      <th>접수일</th>
-      <th>피드백 내용</th>
-      <th>담당</th>
-      <th>상태</th>
-      <th>수정일</th>
-      <th>수정 내용</th>
-    </tr>
-  </thead>
-  <tbody>
-{% assign rows = "" | split: "" %}
-{% for member in site.data.feedback %}{% assign m = member[1] %}{% for item in m.feedback %}
-    <tr>
-      <td class="fb-date">{{ item.received }}</td>
-      <td>{{ item.content }}{% if item.from %}<div class="fb-from">출처: {{ item.from }}</div>{% endif %}</td>
-      <td><span class="fb-owner" style="background: {{ m.color }};">{{ m.name | default: m.owner }}</span></td>
-      <td>{% case item.status %}{% when "done" %}<span class="fb-status fb-done">반영 완료</span>{% when "doing" %}<span class="fb-status fb-doing">수정 중</span>{% else %}<span class="fb-status fb-todo">대기</span>{% endcase %}</td>
-      <td class="fb-date">{{ item.fixed | default: "—" }}</td>
-      <td>{{ item.fix | default: "—" }}</td>
-    </tr>
-{% endfor %}{% endfor %}
 {% assign total = 0 %}{% for member in site.data.feedback %}{% assign m = member[1] %}{% assign total = total | plus: m.feedback.size %}{% endfor %}
 {% if total == 0 %}
-    <tr><td colspan="6" style="opacity:0.5; text-align:center;">아직 기록된 피드백이 없습니다.</td></tr>
+<div class="fb-empty">아직 기록된 피드백이 없습니다.</div>
 {% endif %}
-  </tbody>
-</table>
+{% for member in site.data.feedback %}{% assign m = member[1] %}{% for item in m.feedback %}
+<div class="fb-item">
+  <div class="fb-head">
+    <span class="fb-owner" style="background: {{ m.color }};">{{ m.name | default: m.owner }}</span>
+    {% case item.status %}{% when "done" %}<span class="fb-status fb-done">반영 완료</span>{% when "doing" %}<span class="fb-status fb-doing">수정 중</span>{% else %}<span class="fb-status fb-todo">대기</span>{% endcase %}
+    <span class="fb-dates">접수 {{ item.received }}{% if item.from %} · {{ item.from }}{% endif %}{% if item.fixed %} → 반영 {{ item.fixed }}{% endif %}</span>
+  </div>
+  <div class="fb-block">
+    <div class="fb-label">피드백</div>
+    <p>{{ item.content }}</p>
+  </div>
+  {% if item.fix and item.fix != "" %}
+  <div class="fb-block fb-fix">
+    <div class="fb-label">반영 내용</div>
+    <p>{{ item.fix }}</p>
+  </div>
+  {% endif %}
+</div>
+{% endfor %}{% endfor %}
 
 <details markdown="1">
 <summary>📖 사용 규칙 보기 (기록 방법)</summary>
