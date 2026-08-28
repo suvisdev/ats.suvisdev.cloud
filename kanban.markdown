@@ -27,7 +27,7 @@ permalink: /kanban/
 
 <div class="kb-legend">
 {% for member in site.data.kanban %}{% assign m = member[1] %}
-  <span class="kb-owner" style="background: {{ m.color }};">{{ m.owner }} · {{ m.domain }}</span>
+  <span class="kb-owner" style="background: {{ m.color }};">{{ m.name | default: m.owner }} · {{ m.domain }}</span>
 {% endfor %}
 </div>
 
@@ -47,7 +47,7 @@ permalink: /kanban/
         <div class="kb-card" style="border-left-color: {{ m.color }};">
           <div class="kb-card-title">{{ card.title }}</div>
           <div class="kb-meta">
-            <span class="kb-owner" style="background: {{ m.color }};">{{ m.owner }}</span>
+            <span class="kb-owner" style="background: {{ m.color }};">{{ m.name | default: m.owner }}</span>
             {% if card.feature %}<span class="kb-tag">{{ card.feature }}</span>{% endif %}
             {% if card.due %}<span class="kb-due">~{{ card.due }}</span>{% endif %}
           </div>
