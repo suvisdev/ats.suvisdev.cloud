@@ -3,6 +3,9 @@ layout: default
 title: "Arda 프로젝트 구조 분석"
 date: 2026-08-28
 categories: [analysis]
+owner: 진수택
+owner_color: "#7aa2f7"
+summary: "저장소 구조(backend 라우터 11종·에이전트 모듈) · 도메인 오너제와 W1 협업 규칙 진화 · ERD/API 문서=계약 원칙 · ADR 15건 · 게이트 일정(09/04·09/30) 분석"
 ---
 
 # Arda 프로젝트 구조 분석

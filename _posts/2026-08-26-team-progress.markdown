@@ -3,6 +3,9 @@ layout: default
 title: "Arda ATS 1주차 팀 활동 보고"
 date: 2026-08-26
 categories: [progress]
+owner: 팀 전체
+owner_color: "#9aa0ac"
+summary: "08/20~26 팀원 5인 활동 정리 — 기반 구축·목업(이재우), API·인프라(이우정), 목업·React 전환(박소연), 백엔드 분담·문서(김민아), 에이전트 코어(진수택)"
 ---
 
 # Arda ATS 1주차 팀 활동 보고

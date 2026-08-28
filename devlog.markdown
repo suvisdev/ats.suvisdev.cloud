@@ -34,13 +34,7 @@ a.dl-link:hover .dl-go { opacity: 1; }
 {% assign prev_day = "" %}
 {% for row in entries %}{% assign p = row | split: "¦" %}
 {% if p[0] != prev_day %}<div class="dl-day">{{ p[0] }}</div>{% assign prev_day = p[0] %}{% endif %}
-<a class="dl-row dl-link" href="{{ '/devlog/details/' | relative_url }}#d{{ forloop.index }}">
-  <span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span>
-  {% if p[3] and p[3] != "" %}<span class="dl-feature">{{ p[3] }}</span>{% endif %}
-  <span>{{ p[4] }}</span>
-  <span class="dl-go">자세히 ›</span>
-  {% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}
-</a>
+<a class="dl-row dl-link" href="{{ '/devlog/details/' | relative_url }}#d{{ forloop.index }}"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span>{% if p[3] and p[3] != "" %}<span class="dl-feature">{{ p[3] }}</span>{% endif %}<span>{{ p[4] }}</span><span class="dl-go">자세히 ›</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</a>
 {% endfor %}
 {% if entries.size == 0 %}
 <p style="opacity:0.5;">아직 완료 기록이 없습니다.</p>
@@ -54,10 +48,7 @@ a.dl-link:hover .dl-go { opacity: 1; }
 {% for post in site.posts %}
 {% assign pday = post.date | date: "%Y-%m-%d" %}
 {% if pday != prev_pday %}<div class="dl-day">{{ pday }}</div>{% assign prev_pday = pday %}{% endif %}
-<div class="dl-row">
-  <span class="dl-feature">포스트</span>
-  <a href="{{ post.url | relative_url }}" style="color: #e2e2e2;">{{ post.title }}</a>
-</div>
+<a class="dl-row dl-link" href="{{ post.url | relative_url }}"><span class="dl-owner" style="background: {{ post.owner_color | default: '#9aa0ac' }};">{{ post.owner | default: "팀" }}</span><span class="dl-feature">포스트</span><span>{{ post.title }}</span><span class="dl-go">자세히 ›</span>{% if post.summary %}<span class="dl-note">{{ post.summary }}</span>{% endif %}</a>
 {% endfor %}
 
 {% if site.posts.size == 0 %}
