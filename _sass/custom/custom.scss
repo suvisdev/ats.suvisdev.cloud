@@ -1,0 +1,32 @@
+// 사이트 공통 표 스타일 통일 (2026-08-28) — 표지 정보 표(cv-table)와
+// 일반 마크다운 표가 같은 톤(가는 수평선·여백·헤더 강조)을 쓴다.
+
+// 일반 마크다운 표
+.main-content table {
+  border-collapse: collapse;
+  th {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    vertical-align: top;
+  }
+  th, td { padding: 10px 12px; }
+}
+
+// 표지·정보 표 (항목:내용 2열형) — 어느 페이지든 class="cv-table"로 사용
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1rem;
+  td { padding: 11px 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); vertical-align: top; }
+  .cv-label { width: 9.5em; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; opacity: 0.75; white-space: nowrap; }
+  .cv-main { font-size: 0.95rem; font-weight: 700; }
+  .cv-sub { font-size: 0.78rem; opacity: 0.6; margin-top: 3px; letter-spacing: 0.02em; }
+  a { color: #e0af68; text-decoration: none; font-weight: 700; }
+  a:hover { text-decoration: underline; }
+}

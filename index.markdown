@@ -18,16 +18,6 @@ permalink: /
 
 ---
 
-<style>
-.cv-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; }
-.cv-table td { padding: 11px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); vertical-align: top; }
-.cv-label { width: 9.5em; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; opacity: 0.75; white-space: nowrap; }
-.cv-main { font-size: 0.95rem; font-weight: 700; }
-.cv-sub { font-size: 0.78rem; opacity: 0.6; margin-top: 3px; letter-spacing: 0.02em; }
-.cv-table a { color: #e0af68; text-decoration: none; font-weight: 700; }
-.cv-table a:hover { text-decoration: underline; }
-</style>
-
 <table class="cv-table">
 <tr><td class="cv-label">사업명</td><td><div class="cv-main">AI 기반 채용 프로세스 자동화 및 지원자 통합 관리 플랫폼</div></td></tr>
 <tr><td class="cv-label">시스템명</td><td><div class="cv-main">Arda (Eval-ATS)</div></td></tr>
@@ -36,7 +26,7 @@ permalink: /
 <tr><td class="cv-label">문서 작성일</td><td><div class="cv-main">{{ site.time | date: "%Y년 %-m월 %-d일" }}</div><div class="cv-sub">push 시 자동 갱신 (마지막 배포 기준)</div></td></tr>
 <tr><td class="cv-label">깃허브 주소</td><td><div class="cv-main"><a href="https://github.com/Team-Seuk/Arda">github.com/Team-Seuk/Arda</a></div><div class="cv-sub">문서 저장소 — <a href="https://github.com/suvisdev/ats.suvisdev.cloud">github.com/suvisdev/ats.suvisdev.cloud</a></div></td></tr>
 <tr><td class="cv-label">문서 사이트</td><td><div class="cv-main"><a href="https://ats.suvisdev.cloud">ats.suvisdev.cloud</a></div></td></tr>
-<tr><td class="cv-label">데모 사이트</td><td><div class="cv-main"><a href="https://arda-nu.vercel.app">arda-nu.vercel.app</a></div><div class="cv-sub">커스텀 도메인 arda.seuk.cloud 적용 중 · API api.arda.seuk.cloud</div></td></tr>
+<tr><td class="cv-label">데모 사이트</td><td><div class="cv-main"><a href="https://arda.seuk.cloud">arda.seuk.cloud</a></div><div class="cv-sub">Vercel 배포 · API api.arda.seuk.cloud</div></td></tr>
 </table>
 
 ---
