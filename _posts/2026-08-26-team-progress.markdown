@@ -11,7 +11,18 @@ categories: [progress]
 
 ---
 
-## 팀장 — bestcow
+<style>
+.tp-member { border: 1px solid rgba(255,255,255,0.12); border-left: 4px solid var(--mc); border-radius: 8px; padding: 2px 18px 12px; margin: 1.4rem 0; background: rgba(255,255,255,0.02); }
+.tp-head { display: flex; align-items: center; gap: 9px; margin: 12px 0 2px; }
+.tp-owner { font-size: 0.74rem; font-weight: 700; padding: 2px 11px; border-radius: 999px; color: #111; }
+.tp-domain { font-size: 0.8rem; opacity: 0.65; }
+.tp-member h3 { font-size: 0.82rem; font-weight: 700; opacity: 0.75; margin: 1.1rem 0 0.3rem; padding-left: 9px; border-left: 3px solid var(--mc); }
+.tp-member ul { margin: 0.2rem 0 0.4rem; }
+.tp-member li { font-size: 0.85rem; line-height: 1.65; }
+</style>
+
+<div class="tp-member" style="--mc: #e0af68;" markdown="1">
+<div class="tp-head"><span class="tp-owner" style="background: #e0af68;">이재우</span><span class="tp-domain">인프라·총괄 (팀장)</span></div>
 
 ### 프로젝트 기반 구축
 - 프로젝트 구조 및 문서 초기 셋업
@@ -47,7 +58,9 @@ categories: [progress]
 
 ---
 
-## 우정 — woojeongalex (백엔드)
+</div>
+<div class="tp-member" style="--mc: #f7768e;" markdown="1">
+<div class="tp-head"><span class="tp-owner" style="background: #f7768e;">이우정</span><span class="tp-domain">백엔드</span></div>
 
 ### API 구현
 - **인증**: 회원가입, 로그인, me (A1, A2)
@@ -80,7 +93,9 @@ categories: [progress]
 
 ---
 
-## 소연 — cloverky (프론트엔드)
+</div>
+<div class="tp-member" style="--mc: #9ece6a;" markdown="1">
+<div class="tp-head"><span class="tp-owner" style="background: #9ece6a;">박소연</span><span class="tp-domain">프론트엔드</span></div>
 
 ### 목업 제작
 - 지원자 통합 검색 화면 목업 (H1)
@@ -113,7 +128,9 @@ categories: [progress]
 
 ---
 
-## 민아 — 김민아 (앱)
+</div>
+<div class="tp-member" style="--mc: #bb9af7;" markdown="1">
+<div class="tp-head"><span class="tp-owner" style="background: #bb9af7;">김민아</span><span class="tp-domain">앱</span></div>
 
 ### API 구현 (전환기 백엔드 분담)
 - **채용 공고 CRUD API** (B1, B2, B3)
@@ -128,7 +145,9 @@ categories: [progress]
 
 ---
 
-## 수택 — suvisdev (에이전트)
+</div>
+<div class="tp-member" style="--mc: #7aa2f7;" markdown="1">
+<div class="tp-head"><span class="tp-owner" style="background: #7aa2f7;">진수택</span><span class="tp-domain">에이전트</span></div>
 
 ### 에이전트 코어 구현
 - **M2**: AI 요약 파이프라인 (summarizer)
@@ -159,6 +178,7 @@ categories: [progress]
 
 ---
 
+</div>
 ## 전체 현황 요약
 
 | 영역 | 완료 항목 | 비고 |
