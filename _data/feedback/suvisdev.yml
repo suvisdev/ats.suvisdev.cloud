@@ -1,0 +1,14 @@
+# ⚠️ 이 파일은 진수택(suvisdev) 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+# 새 피드백은 맨 위에 추가합니다. status: todo(대기) | doing(수정 중) | done(반영 완료)
+owner: suvisdev
+name: 진수택
+domain: 에이전트
+color: "#7aa2f7"
+feedback:
+  - received: 2026-08-28
+    from: "E2E 데모 실측"
+    content: "대화가 길어지면 에이전트가 application_id를 엉뚱한 값으로 참조 (Step 4에서 id=1 사용)"
+    status: done
+    fixed: 2026-08-28
+    fix: "agent.v1.md에 ID 참조 규칙 2줄 추가 — 직전 도구 결과에서 확인된 ID만 사용, 지시어는 최근 조회 지원자 기준. 수정 후 id=52 정확 참조 확인"
+
