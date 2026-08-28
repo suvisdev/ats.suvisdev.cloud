@@ -12,7 +12,9 @@ permalink: /devlog/
 [팀 칸반](/kanban/)에서 `done` 처리된 카드가 완료일 기준으로 자동 집계됩니다 — 따로 쓸 필요 없이 칸반만 갱신하면 됩니다.
 
 <style>
-.dl-day { margin: 1.2rem 0 0.4rem; font-size: 0.85rem; font-weight: 700; opacity: 0.75; }
+.dl-day { display: flex; align-items: center; gap: 10px; margin: 1.8rem 0 0.7rem; font-size: 0.98rem; font-weight: 800; color: #eceff4; }
+.dl-day::before { content: ""; width: 5px; height: 1.1em; border-radius: 2px; background: #7aa2f7; }
+.dl-day::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.14); }
 .dl-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; padding: 5px 0 5px 10px; border-left: 3px solid rgba(255,255,255,0.15); font-size: 0.85rem; }
 .dl-owner { font-size: 0.66rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; color: #111; white-space: nowrap; }
 .dl-feature { font-size: 0.66rem; padding: 1px 7px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); opacity: 0.8; white-space: nowrap; }
