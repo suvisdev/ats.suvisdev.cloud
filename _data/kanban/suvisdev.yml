@@ -4,6 +4,9 @@ name: 진수택
 domain: 에이전트
 color: "#7aa2f7"
 cards:
+  - title: "면접 일정 조율 에이전트 — 면접관 가용 시간 파악→후보 제안→선택→확정"
+    feature: "신규"
+    status: todo
   - title: "E2E 데모 4단계 시나리오 (검색→조회→상태 변경→이메일 초안)"
     feature: "W1"
     status: done
