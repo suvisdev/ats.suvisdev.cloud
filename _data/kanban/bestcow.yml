@@ -1,0 +1,15 @@
+# ⚠️ 이 파일은 bestcow 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+owner: bestcow
+domain: 인프라·총괄
+color: "#e0af68"
+cards:
+  - title: "실배포 1차 (W2 마일스톤 조기 완료)"
+    feature: "W1-4"
+    status: done
+  - title: "주간 다이제스트 (금요일 — 그 주 변경 요약)"
+    feature: "운영"
+    status: doing
+  - title: "09/04 초기 버전 게이트 점검"
+    feature: "게이트"
+    status: todo
+    due: 2026-09-04

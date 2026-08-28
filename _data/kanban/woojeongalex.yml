@@ -1,0 +1,15 @@
+# ⚠️ 이 파일은 woojeongalex 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+owner: woojeongalex
+domain: 백엔드
+color: "#f7768e"
+cards:
+  - title: "JWT 인증 · 역할 3종 (A1~A3)"
+    feature: "A"
+    status: doing
+    due: 2026-09-04
+  - title: "단계 전환 로직 (후퇴 불가 정책)"
+    feature: "D3"
+    status: todo
+  - title: "지원자 검색·필터 — 더미 10만 건 튜닝"
+    feature: "H"
+    status: todo

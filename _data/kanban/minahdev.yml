@@ -1,0 +1,12 @@
+# ⚠️ 이 파일은 minahdev 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+owner: minahdev
+domain: 앱
+color: "#bb9af7"
+cards:
+  - title: "백엔드 분담 큐 (B2 → D1 → D6)"
+    feature: "전환기"
+    status: doing
+    due: 2026-09-04
+  - title: "Flutter 앱 M1 (조회·단계 변경·평가)"
+    feature: "M1"
+    status: todo

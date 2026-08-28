@@ -1,0 +1,27 @@
+# ⚠️ 이 파일은 suvisdev 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+owner: suvisdev
+domain: 에이전트
+color: "#7aa2f7"
+cards:
+  - title: "E2E 데모 4단계 시나리오 (검색→조회→상태 변경→이메일 초안)"
+    feature: "W1"
+    status: done
+    note: "4단계 전부 실호출 성공, 비용 실측 $0.045"
+  - title: "테스트 커버리지 보강 — 전체 134개"
+    feature: "PR#133"
+    status: done
+  - title: "STT 비용 로깅 통일 (채팅·요약·STT)"
+    feature: "W1"
+    status: done
+  - title: "목업 테스트 → 프론트 전달"
+    feature: "W2"
+    status: doing
+    due: 2026-09-04
+  - title: "API TestClient 테스트"
+    feature: "W2"
+    status: todo
+    due: 2026-09-04
+  - title: "opus-5 실측 · 운영 STT 테스트"
+    feature: "W3"
+    status: todo
+    due: 2026-09-11
