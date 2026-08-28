@@ -7,7 +7,10 @@ permalink: /devlog/details/
 
 # 완료 작업 상세
 
-[← 개발 로그로 돌아가기](/devlog/)
+<div class="dd-nav">
+  <a href="/devlog/">← 개발 로그로 돌아가기</a>
+  <a href="#" id="dd-all" style="display:none;">전체 완료 기록 보기</a>
+</div>
 
 <style>
 .dd-day { display: flex; align-items: center; gap: 10px; margin: 1.8rem 0 0.7rem; font-size: 0.98rem; font-weight: 800; color: #eceff4; }
@@ -22,6 +25,9 @@ permalink: /devlog/details/
 .dd-note { font-size: 0.76rem; opacity: 0.6; margin-bottom: 6px; }
 .dd-detail { font-size: 0.84rem; line-height: 1.75; opacity: 0.92; white-space: pre-line; border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; margin-top: 4px; }
 .dd-empty { font-size: 0.8rem; opacity: 0.5; }
+.dd-nav { display: flex; gap: 16px; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.dd-nav a { color: #7aa2f7; text-decoration: none; }
+.dd-nav a:hover { text-decoration: underline; }
 </style>
 
 {% assign entries = "" | split: "" %}
@@ -43,3 +49,36 @@ permalink: /devlog/details/
   {% if p[6] and p[6] != "" %}<div class="dd-detail">{{ p[6] | strip }}</div>{% else %}<div class="dd-empty">상세 요약이 아직 없습니다 — 칸반 카드의 detail 필드에 채우면 여기 표시됩니다.</div>{% endif %}
 </div>
 {% endfor %}
+
+<script>
+(function () {
+  function applyFilter() {
+    var hash = location.hash.replace("#", "");
+    var items = document.querySelectorAll(".dd-item");
+    var anyTarget = hash && document.getElementById(hash);
+    items.forEach(function (el) {
+      el.style.display = (!anyTarget || el.id === hash) ? "" : "none";
+    });
+    // 날짜 헤더: 다음 헤더 전까지 보이는 카드가 하나라도 있어야 표시
+    document.querySelectorAll(".dd-day").forEach(function (day) {
+      var visible = false;
+      var el = day.nextElementSibling;
+      while (el && !el.classList.contains("dd-day")) {
+        if (el.classList.contains("dd-item") && el.style.display !== "none") visible = true;
+        el = el.nextElementSibling;
+      }
+      day.style.display = visible ? "" : "none";
+    });
+    var allBtn = document.getElementById("dd-all");
+    if (allBtn) allBtn.style.display = anyTarget ? "" : "none";
+  }
+  var allBtn = document.getElementById("dd-all");
+  if (allBtn) allBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    history.replaceState(null, "", location.pathname);
+    applyFilter();
+  });
+  window.addEventListener("hashchange", applyFilter);
+  applyFilter();
+})();
+</script>
