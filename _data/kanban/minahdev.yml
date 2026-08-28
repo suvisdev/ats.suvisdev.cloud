@@ -6,8 +6,36 @@ color: "#bb9af7"
 cards:
   - title: "백엔드 분담 큐 (B2 → D1 → D6)"
     feature: "전환기"
-    status: doing
+    status: done
     due: 2026-09-04
+    note: "08/25 완료 — B2 #32 · D1 #48 · D6 #72"
+  - title: "앱 스택 Flutter 재확정 (ADR-0010)"
+    feature: "ADR-0010"
+    status: done
+    note: "iOS 를 시연 범위에서 빼면서 Expo 기각 근거가 사라졌다 — #110 · #113"
+  - title: "Flutter 프로젝트·디자인 토큰·내비게이션 뼈대"
+    feature: "큐 5"
+    status: done
+    note: "05-design 토큰 Dart 이식 · IBM Plex Sans KR 번들 — #114"
+  - title: "지원자 리스트 화면 (목데이터)"
+    feature: "큐 6"
+    status: done
+    note: "상단 바·공고명·단계 탭·카드 리스트 — #137"
+  - title: "지원자 상세·로그인 화면 (목데이터)"
+    feature: "큐 6"
+    status: done
+    note: "지원 정보·단계 변경 버튼·로그인 — #138 외"
   - title: "Flutter 앱 M1 (조회·단계 변경·평가)"
     feature: "M1"
+    status: doing
+  - title: "JWT 로그인 연동 (secure storage)"
+    feature: "큐 7"
     status: todo
+  - title: "팀 Android 기기 전원 APK 설치 확인"
+    feature: "M1"
+    status: todo
+    note: "W2 완료 기준의 나머지 절반 — 내 기기만 확인됨"
+  - title: "목업 대기 — 단계 변경 UI·이력 타임라인·평가·퍼널·공고 리스트"
+    feature: "큐 6"
+    status: todo
+    note: "모바일 시안이 없어 진행 보류. 프론트 담당자에게 요청함"
