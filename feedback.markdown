@@ -7,8 +7,6 @@ permalink: /feedback/
 
 # 피드백 트래커
 
-들어온 피드백과 반영 이력. **기록은 피드백을 처리하는 담당자가 `_data/feedback/<자기 GitHub 아이디>.yml`에 남긴다** — 칸반과 같은 원칙(한 사람 = 파일 하나)이라 git 충돌이 없다.
-
 <style>
 .fb-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 1rem 0 2rem; }
 .fb-table th, .fb-table td { border: 1px solid rgba(255,255,255,0.12); padding: 7px 9px; vertical-align: top; text-align: left; }
@@ -20,6 +18,9 @@ permalink: /feedback/
 .fb-done { background: rgba(158,206,106,0.2); color: #9ece6a; }
 .fb-from { font-size: 0.68rem; opacity: 0.6; }
 .fb-date { white-space: nowrap; }
+details { margin-top: 1.5rem; }
+details summary { cursor: pointer; font-size: 0.78rem; opacity: 0.6; }
+details summary:hover { opacity: 1; text-decoration: underline; }
 </style>
 
 <table class="fb-table">
@@ -52,9 +53,12 @@ permalink: /feedback/
   </tbody>
 </table>
 
-## 사용 규칙
+<details markdown="1">
+<summary>📖 사용 규칙 보기 (기록 방법)</summary>
 
-1. **자기 파일만 수정한다** — `_data/feedback/<GitHub 아이디>.yml`. 담당이 애매한 피드백은 팀 채널에서 담당을 정한 뒤 그 사람이 기록한다.
+기록은 피드백을 처리하는 담당자가 `_data/feedback/<자기 GitHub 아이디>.yml`에 남긴다 — 칸반과 같은 원칙(한 사람 = 파일 하나)이라 git 충돌이 없다.
+
+1. **자기 파일만 수정한다.** 담당이 애매한 피드백은 팀 채널에서 담당을 정한 뒤 그 사람이 기록한다.
 2. **새 항목은 파일 맨 위에 추가**한다(최신순 유지). 형식:
    ```yaml
    - received: 2026-09-01      # 피드백 들어온 날짜
@@ -66,3 +70,5 @@ permalink: /feedback/
    ```
 3. 접수 시점에는 `received/from/content/status: todo`만 채우고, **반영이 끝나면 같은 항목에 `fixed`·`fix`를 채우고 `status: done`으로 바꾼다** — 접수와 반영이 한 줄에서 추적된다.
 4. 반영이 칸반 카드로 이어지면 카드 `note`에 "피드백 반영"이라고 적어 연결한다.
+
+</details>

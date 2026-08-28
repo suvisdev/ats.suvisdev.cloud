@@ -7,8 +7,6 @@ permalink: /kanban/
 
 # 팀 칸반 보드
 
-개발 기간(W1~W5) 동안의 팀원별 백로그·진행 현황. **카드는 `_data/kanban/<자기 GitHub 아이디>.yml`에서만 편집한다** — 한 사람이 파일 하나를 소유하므로 5명이 동시에 작업해도 git 충돌이 나지 않는다.
-
 <style>
 .kb-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 1rem 0 2rem; }
 @media (max-width: 768px) { .kb-board { grid-template-columns: 1fr; } }
@@ -23,6 +21,9 @@ permalink: /kanban/
 .kb-note { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; }
 .kb-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem; }
 .kb-count { opacity: 0.6; font-weight: 400; }
+details { margin-top: 1.5rem; }
+details summary { cursor: pointer; font-size: 0.78rem; opacity: 0.6; }
+details summary:hover { opacity: 1; text-decoration: underline; }
 </style>
 
 <div class="kb-legend">
@@ -60,9 +61,12 @@ permalink: /kanban/
 {% endfor %}
 </div>
 
-## 사용 규칙 (충돌 방지)
+<details markdown="1">
+<summary>📖 사용 규칙 보기 (카드 편집 방법 · 충돌 방지)</summary>
 
-1. **자기 파일만 수정한다.** 카드 데이터는 `_data/kanban/<GitHub 아이디>.yml` — 본인 소유 파일 외에는 손대지 않는다. 남의 카드에 할 말이 있으면 팀 채널로.
+카드는 `_data/kanban/<자기 GitHub 아이디>.yml`에서만 편집한다 — 한 사람이 파일 하나를 소유하므로 5명이 동시에 작업해도 git 충돌이 나지 않는다.
+
+1. **자기 파일만 수정한다.** 본인 소유 파일 외에는 손대지 않는다. 남의 카드에 할 말이 있으면 팀 채널로.
 2. **카드 형식**은 파일 안 기존 항목을 복사해서 쓴다. `status`는 `todo | doing | done` 세 값만.
    ```yaml
    - title: "카드 제목"
@@ -71,6 +75,9 @@ permalink: /kanban/
      due: 2026-09-04      # 마감 (선택)
      note: ""             # 한 줄 메모 (선택)
    ```
-3. **push 전 `git pull --rebase`.** 서로 다른 파일이라 rebase가 항상 깨끗하게 통과한다 — 같은 파일을 여럿이 고칠 때만 충돌이 나는데, 이 구조에서는 그 경우가 없다.
+3. **push 전 `git pull --rebase`.** 서로 다른 파일이라 rebase가 항상 깨끗하게 통과한다. 충돌이 났다면 파일 소유자 버전 우선, `push --force` 금지.
 4. **포스트(`_posts/`)도 같은 원칙**: 파일명을 `YYYY-MM-DD-<아이디>-<주제>.markdown`으로 만들어 한 파일을 한 사람만 만지게 한다.
 5. `done` 카드는 주간 다이제스트(금요일) 이후 각자 정리(삭제 또는 유지)한다.
+6. 팀 채널에 공유된 `Arda-칸반-클로드-지시서.md`를 Claude에게 읽히면 위 전부를 말로 대신 시킬 수 있다.
+
+</details>
