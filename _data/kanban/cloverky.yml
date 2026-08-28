@@ -5,9 +5,19 @@ domain: 프론트엔드
 color: "#9ece6a"
 cards:
   - title: "지원자 칸반 보드 UI (드래그 단계 이동)"
-    feature: "D"
-    status: doing
+    feature: "D2·D3"
+    status: done
     due: 2026-09-04
   - title: "프론트 뼈대 (React 라우팅·레이아웃)"
     feature: "front"
-    status: doing
+    status: done
+  - title: "API 연동 — 로그인·공고·대시보드·지원자·평가"
+    feature: "큐7"
+    status: done
+  - title: "공고의 지원자 화면 + 상세 패널·일괄 단계 변경"
+    feature: "D1·D4·D9"
+    status: done
+  - title: "면접 일정 실연동"
+    feature: "front"
+    status: todo
+    note: "면접 일정 테이블(scheduled_at·round) 없어 대기"
