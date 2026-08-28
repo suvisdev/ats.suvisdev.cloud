@@ -16,13 +16,13 @@ cards:
     status: done
     done: 2026-08-28
     detail: |
-      React(Vite·TS) 라우팅·공통 레이아웃 뼈대 구축 — 목업의 React 전환 기반.
+      React(Vite·TS) 라우팅·레이아웃 뼈대 구축(1주차 React 전환 작업).
   - title: "API 연동 — 로그인·공고·대시보드·지원자·평가"
     feature: "큐7"
     status: done
     done: 2026-08-28
     detail: |
-      백엔드 실제 API 5개 영역(로그인·공고·대시보드·지원자·평가) 연동 — 목데이터 탈피(큐7).
+      백엔드 실제 API 5개 영역(로그인·공고·대시보드·지원자·평가) 연동(큐7).
   - title: "공고의 지원자 화면 + 상세 패널·일괄 단계 변경"
     feature: "D1·D4·D9"
     status: done
