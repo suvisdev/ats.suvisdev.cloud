@@ -6,11 +6,52 @@ color: "#f7768e"
 cards:
   - title: "JWT 인증 · 역할 3종 (A1~A3)"
     feature: "A"
-    status: doing
+    status: done
     due: 2026-09-04
   - title: "단계 전환 로직 (후퇴 불가 정책)"
     feature: "D3"
-    status: todo
+    status: done
   - title: "지원자 검색·필터 — 더미 10만 건 튜닝"
     feature: "H"
+    status: done
+  - title: "지원서 제출 API (공개 폼)"
+    feature: "C1·C3·C6"
+    status: done
+  - title: "S3 presigned 업로드·다운로드 + 파일 검증"
+    feature: "F1~F3"
+    status: done
+  - title: "메일 큐 — SES 발송 + SQS 워커·재시도"
+    feature: "G1~G3"
+    status: done
+  - title: "접수 확인 메일"
+    feature: "C4"
+    status: done
+  - title: "담당자 메모 API"
+    feature: "D7"
+    status: done
+  - title: "정렬 + 커서 페이지네이션"
+    feature: "H4·H5"
+    status: done
+  - title: "마감일 자동 마감 + 공개 링크"
+    feature: "B4·B6"
+    status: done
+  - title: "불합격 사유 + 일괄 단계 변경"
+    feature: "D8·D9"
+    status: done
+  - title: "구조화 로깅 + 에러 코드 표준화"
+    feature: "J5·J6"
+    status: done
+  - title: "재배포 반영 확인 — 코어 API + GET 13개 무인증 대조 재실행"
+    feature: "W2"
+    status: doing
+    due: 2026-09-04
+    note: "운영 이미지가 08/27~28 시점. 재배포 자체는 인프라 소관"
+  - title: "수직 슬라이스 관통 확인 (게이트 조건)"
+    feature: "W2"
     status: todo
+    due: 2026-09-04
+    note: "프론트 공개 지원 폼 /apply/:token 대기 — 09/03까지 없으면 백엔드 단독 관통으로 대체"
+  - title: "무인증 대조 스크립트화 → J8 전달"
+    feature: "J8"
+    status: todo
+    note: "지금까지 나온 결함이 전부 이 대조에서 나왔다"
