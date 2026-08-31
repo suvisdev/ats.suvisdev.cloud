@@ -6,7 +6,18 @@ color: "#7aa2f7"
 cards:
   - title: "면접 일정 조율 에이전트 — 면접관 가용 시간 파악→후보 제안→선택→확정"
     feature: "신규"
-    status: todo
+    status: doing
+    note: "search_users 도구 추가로 이름→ID 변환 가능, 라이브 테스트 통과"
+  - title: "search_users 읽기 도구 + 권한 분리"
+    feature: "PR#153"
+    status: done
+    done: 2026-08-31
+    note: "내부 사용자 검색 도구 + 프롬프트 user_role 주입"
+    detail: |
+      면접관을 이름으로 찾을 수 없던 문제 해결. search_users 읽기 도구 추가(이름/이메일 ILIKE + role 필터).
+      프롬프트에 user_role 주입하여 멤버가 어드민 전용 도구(assign_interviewer) 요청 시 사전 차단.
+      라이브 테스트: 어드민→확인 카드 정상, 멤버→"어드민 권한이 필요해요" 차단 확인.
+      PR #153 squash merge.
   - title: "API TestClient 엣지 케이스 41개"
     feature: "PR#141"
     status: done
