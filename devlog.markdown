@@ -9,7 +9,7 @@ permalink: /devlog/
 
 ## 완료 작업 타임라인
 
-[팀 칸반](/kanban/)에서 `done` 처리된 카드가 완료일 기준으로 자동 집계됩니다 — 항목을 클릭하면 상세 요약으로 이동합니다.
+[팀 칸반](/kanban/)에서 `done` 처리된 카드가 완료일 기준으로 자동 집계됩니다 — 항목을 클릭하면 상세 요약이 아래로 펼쳐집니다.
 
 <style>
 .dl-day { display: flex; align-items: center; gap: 10px; margin: 1.8rem 0 0.7rem; font-size: 0.98rem; font-weight: 800; color: #eceff4; }
@@ -23,6 +23,14 @@ a.dl-link { color: inherit; text-decoration: none; }
 a.dl-link:hover { background: rgba(255,255,255,0.05); border-left-color: #7aa2f7; }
 .dl-go { margin-left: auto; font-size: 0.7rem; color: #7aa2f7; opacity: 0; white-space: nowrap; }
 a.dl-link:hover .dl-go { opacity: 1; }
+details.dl-item { margin: 0; }
+details.dl-item > summary.dl-row { cursor: pointer; list-style: none; }
+details.dl-item > summary.dl-row::-webkit-details-marker { display: none; }
+details.dl-item > summary.dl-row:hover { background: rgba(255,255,255,0.05); border-left-color: #7aa2f7; }
+details.dl-item > summary.dl-row:hover .dl-go { opacity: 1; }
+details.dl-item[open] > summary.dl-row { border-left-color: #7aa2f7; background: rgba(122,162,247,0.06); }
+details.dl-item[open] > summary.dl-row .dl-go { opacity: 1; }
+.dl-detail { font-size: 0.82rem; line-height: 1.75; opacity: 0.92; border-left: 3px solid rgba(122,162,247,0.4); margin: 2px 0 10px; padding: 8px 0 8px 14px; }
 </style>
 
 {% assign entries = "" | split: "" %}
@@ -34,7 +42,7 @@ a.dl-link:hover .dl-go { opacity: 1; }
 {% assign prev_day = "" %}
 {% for row in entries %}{% assign p = row | split: "¦" %}
 {% if p[0] != prev_day %}<div class="dl-day">{{ p[0] }}</div>{% assign prev_day = p[0] %}{% endif %}
-<a class="dl-row dl-link" href="{{ '/devlog/details/' | relative_url }}#d{{ forloop.index }}"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span>{% if p[3] and p[3] != "" %}<span class="dl-feature">{{ p[3] }}</span>{% endif %}<span>{{ p[4] }}</span><span class="dl-go">자세히 ›</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</a>
+<details class="dl-item"><summary class="dl-row"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span>{% if p[3] and p[3] != "" %}<span class="dl-feature">{{ p[3] }}</span>{% endif %}<span>{{ p[4] }}</span><span class="dl-go">자세히 ▾</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</summary><div class="dl-detail">{% if p[6] and p[6] != "" %}{{ p[6] | strip | newline_to_br }}{% else %}상세 기록이 없습니다.{% endif %}</div></details>
 {% endfor %}
 {% if entries.size == 0 %}
 <p style="opacity:0.5;">아직 완료 기록이 없습니다.</p>
