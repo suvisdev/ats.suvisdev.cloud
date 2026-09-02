@@ -9,7 +9,7 @@ permalink: /devlog/
 
 ## 완료 작업 타임라인
 
-[팀 칸반](/kanban/)에서 `done` 처리된 카드가 완료일 기준으로 자동 집계됩니다 — 항목을 클릭하면 상세 요약이 아래로 펼쳐집니다.
+[팀 칸반](/kanban/)에서 `done` 처리된 카드와 개발기 포스트가 날짜 기준으로 자동 집계됩니다 — 카드는 클릭하면 상세 요약이 펼쳐지고, 포스트는 본문으로 이동합니다.
 
 <style>
 .dl-day { display: flex; align-items: center; gap: 10px; margin: 1.8rem 0 0.7rem; font-size: 0.98rem; font-weight: 800; color: #eceff4; }
@@ -38,27 +38,20 @@ details.dl-item[open] > summary.dl-row .dl-go { opacity: 1; }
 {% capture row %}{{ card.done }}¦{{ m.color }}¦{{ m.name | default: m.owner }}¦{{ card.feature }}¦{{ card.title }}¦{{ card.note }}¦{{ card.detail }}{% endcapture %}
 {% assign entries = entries | push: row %}
 {% endif %}{% endfor %}{% endfor %}
+{% for post in site.posts %}
+{% capture row %}{{ post.date | date: "%Y-%m-%d" }}¦{{ post.owner_color | default: "#9aa0ac" }}¦{{ post.owner | default: "팀" }}¦포스트¦{{ post.title }}¦{{ post.summary }}¦¦{{ post.url | relative_url }}{% endcapture %}
+{% assign entries = entries | push: row %}
+{% endfor %}
 {% assign entries = entries | sort | reverse %}
 {% assign prev_day = "" %}
 {% for row in entries %}{% assign p = row | split: "¦" %}
 {% if p[0] != prev_day %}<div class="dl-day">{{ p[0] }}</div>{% assign prev_day = p[0] %}{% endif %}
+{% if p[7] and p[7] != "" %}
+<a class="dl-row dl-link" href="{{ p[7] }}"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span><span class="dl-feature">{{ p[3] }}</span><span>{{ p[4] }}</span><span class="dl-go">자세히 ›</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</a>
+{% else %}
 <details class="dl-item"><summary class="dl-row"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span>{% if p[3] and p[3] != "" %}<span class="dl-feature">{{ p[3] }}</span>{% endif %}<span>{{ p[4] }}</span><span class="dl-go">자세히 ▾</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</summary><div class="dl-detail">{% if p[6] and p[6] != "" %}{{ p[6] | strip | newline_to_br }}{% else %}상세 기록이 없습니다.{% endif %}</div></details>
+{% endif %}
 {% endfor %}
 {% if entries.size == 0 %}
 <p style="opacity:0.5;">아직 완료 기록이 없습니다.</p>
-{% endif %}
-
----
-
-## 포스트
-
-{% assign prev_pday = "" %}
-{% for post in site.posts %}
-{% assign pday = post.date | date: "%Y-%m-%d" %}
-{% if pday != prev_pday %}<div class="dl-day">{{ pday }}</div>{% assign prev_pday = pday %}{% endif %}
-<a class="dl-row dl-link" href="{{ post.url | relative_url }}"><span class="dl-owner" style="background: {{ post.owner_color | default: '#9aa0ac' }};">{{ post.owner | default: "팀" }}</span><span class="dl-feature">포스트</span><span>{{ post.title }}</span><span class="dl-go">자세히 ›</span>{% if post.summary %}<span class="dl-note">{{ post.summary }}</span>{% endif %}</a>
-{% endfor %}
-
-{% if site.posts.size == 0 %}
-아직 개발 로그가 없습니다. 프로젝트 진행에 따라 업데이트됩니다.
 {% endif %}
