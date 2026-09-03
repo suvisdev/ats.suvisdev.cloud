@@ -65,6 +65,10 @@ React(Vite/TS) 웹과 Flutter 모바일 앱이 동일한 FastAPI API를 사용�
 
 ## 아키텍처
 
+![Arda 아키텍처 다이어그램](/assets/img/architecture.svg)
+
+지원자는 로그인 없이 공개 링크로, 담당자·면접관은 JWT(역할 3종)로 접근한다. React(Vercel) 프론트가 FastAPI(EC2 · Docker) API를 호출하고, 이력서는 presigned URL로 브라우저에서 S3에 직접 업로드된다. 단계 변경 메일은 SQS 큐에 넣어 워커가 SES로 비동기 발송·재시도한다.
+
 | 계층 | 기술 | 배포 |
 |------|------|------|
 | Frontend | React + TypeScript + Vite | Vercel |
@@ -73,3 +77,21 @@ React(Vite/TS) 웹과 Flutter 모바일 앱이 동일한 FastAPI API를 사용�
 | 파일 저장 | S3 (presigned URL 업로드, SSE 암호화) | AWS S3 |
 | 메일 발송 | SES + SQS (비동기 큐) | AWS SES/SQS |
 | CI/CD | GitHub Actions | 자동 배포 |
+
+---
+
+## ERD — 테이블 9개
+
+![Arda ERD](/assets/img/erd.png)
+
+지원서(applications)를 축으로 한 9개 테이블 — 공고(job_postings)·내부 사용자(users)와, 단계 이력·평가·담당자 메모·이력서 파일·메일 발송 로그·면접관 배정. 지원서에는 접수 시 1회 생성되는 AI 요약 컬럼(ai_summary·생성 시각·모델명)이 함께 저장된다. 복합 UNIQUE 2건 — applications(job_posting_id, email) · interviewer_assignments(application_id, interviewer_id).
+
+---
+
+## 화면
+
+![지원자 칸반 보드 (동작 프로토타입)](/assets/img/screenshot-01.png)
+*지원자 칸반 보드 (동작 프로토타입) — 드래그로 단계 이동, 단계별 인원 현황·검색 필터*
+
+![모바일 (동작 프로토타입)](/assets/img/screenshot-02.png)
+*모바일 (동작 프로토타입) — 단계 탭 + 리스트 뷰, 공개 지원 폼(S3 직접 업로드 진행률)*
