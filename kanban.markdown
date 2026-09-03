@@ -21,9 +21,17 @@ permalink: /kanban/
 .kb-note { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; }
 .kb-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem; }
 .kb-count { opacity: 0.6; font-weight: 400; }
-details { margin-top: 1.5rem; }
-details summary { cursor: pointer; font-size: 0.78rem; opacity: 0.6; }
-details summary:hover { opacity: 1; text-decoration: underline; }
+details.kb-rules { margin-top: 1.5rem; }
+details.kb-rules summary { cursor: pointer; font-size: 0.78rem; opacity: 0.6; }
+details.kb-rules summary:hover { opacity: 1; text-decoration: underline; }
+/* 카드 상세 펼침 (2026-09-03) — detail 있는 카드는 클릭하면 상세가 열린다 */
+details.kb-card { margin: 0 0 8px; }
+details.kb-card summary { cursor: pointer; list-style: none; }
+details.kb-card summary::-webkit-details-marker { display: none; }
+details.kb-card summary:hover .kb-card-title { text-decoration: underline; }
+.kb-more { font-size: 0.64rem; padding: 1px 7px; border-radius: 4px; background: rgba(122,162,247,0.18); border: 1px solid rgba(122,162,247,0.45); }
+details.kb-card[open] .kb-more { opacity: 0.5; }
+.kb-detail { font-size: 0.74rem; line-height: 1.65; opacity: 0.85; margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,0.15); white-space: pre-line; }
 </style>
 
 <div class="kb-legend">
@@ -45,6 +53,21 @@ details summary:hover { opacity: 1; text-decoration: underline; }
       {% assign m = member[1] %}
       {% for card in m.cards %}
         {% if card.status == status %}
+        {% if card.detail %}
+        <details class="kb-card" style="border-left-color: {{ m.color }};">
+          <summary>
+            <div class="kb-card-title">{{ card.title }}</div>
+            <div class="kb-meta">
+              <span class="kb-owner" style="background: {{ m.color }};">{{ m.name | default: m.owner }}</span>
+              {% if card.feature %}<span class="kb-tag">{{ card.feature }}</span>{% endif %}
+              {% if card.due %}<span class="kb-due">~{{ card.due }}</span>{% endif %}
+              <span class="kb-more">상세 ▾</span>
+            </div>
+            {% if card.note %}<div class="kb-note">{{ card.note }}</div>{% endif %}
+          </summary>
+          <div class="kb-detail">{{ card.detail | strip }}</div>
+        </details>
+        {% else %}
         <div class="kb-card" style="border-left-color: {{ m.color }};">
           <div class="kb-card-title">{{ card.title }}</div>
           <div class="kb-meta">
@@ -55,13 +78,14 @@ details summary:hover { opacity: 1; text-decoration: underline; }
           {% if card.note %}<div class="kb-note">{{ card.note }}</div>{% endif %}
         </div>
         {% endif %}
+        {% endif %}
       {% endfor %}
     {% endfor %}
   </div>
 {% endfor %}
 </div>
 
-<details markdown="1">
+<details markdown="1" class="kb-rules">
 <summary>📖 사용 규칙 보기 (카드 편집 방법 · 충돌 방지)</summary>
 
 카드는 `_data/kanban/<자기 GitHub 아이디>.yml`에서만 편집한다 — 한 사람이 파일 하나를 소유하므로 5명이 동시에 작업해도 git 충돌이 나지 않는다.
