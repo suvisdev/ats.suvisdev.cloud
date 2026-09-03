@@ -53,13 +53,13 @@ React(Vite/TS) 웹과 Flutter 모바일 앱이 동일한 FastAPI API를 사용�
 
 ## 기술 스택
 
-**BACKEND** — Python · FastAPI · PostgreSQL
+**BACKEND** — Python · FastAPI · SQLAlchemy · PostgreSQL 16 + pgvector · alembic
 
-**FRONTEND** — React · Vite · TypeScript
+**FRONTEND** — React · Vite · TypeScript / **APP** — Flutter (Android APK)
 
-**INFRA** — Docker · AWS (EC2 · S3 · SES · SQS) · GitHub Actions · Vercel
+**INFRA** — Docker Compose · AWS (EC2 · S3 · SES · SQS) · Caddy · GitHub Actions · Vercel
 
-**AI** — Claude API · pgvector · LangGraph
+**AI** — Claude API(claude-haiku-4-5) 기본 + Ollama(qwen3:4b) 온프레미스 옵션 — 환경변수 스위치로 교체 · ko-sroberta 임베딩(로컬) · Whisper/faster-whisper STT
 
 ---
 
@@ -80,11 +80,12 @@ React(Vite/TS) 웹과 Flutter 모바일 앱이 동일한 FastAPI API를 사용�
 
 ---
 
-## ERD — 테이블 9개
+## ERD — 테이블 14개 (v1.7)
 
-![Arda ERD](/assets/img/erd.png)
+![Arda ERD — 핵심 9테이블](/assets/img/erd.png)
+*다이어그램은 핵심 9테이블(v1.0 기준) — 이후 확장분은 아래 참조*
 
-지원서(applications)를 축으로 한 9개 테이블 — 공고(job_postings)·내부 사용자(users)와, 단계 이력·평가·담당자 메모·이력서 파일·메일 발송 로그·면접관 배정. 지원서에는 접수 시 1회 생성되는 AI 요약 컬럼(ai_summary·생성 시각·모델명)이 함께 저장된다. 복합 UNIQUE 2건 — applications(job_posting_id, email) · interviewer_assignments(application_id, interviewer_id).
+지원서(applications)를 축으로 한 14개 테이블. 핵심 9개 — 공고(job_postings)·내부 사용자(users)와, 단계 이력·평가·담당자 메모·이력서 파일·메일 발송 로그·면접관 배정. 이후 확장 — 메일 템플릿, 면접관 가용 시간, 일정 제안/슬롯, 시맨틱 검색 임베딩(768차원), AI 면접 3종, 인적성 설문 2종. 지원서에는 접수 시 1회 생성되는 AI 요약 컬럼(ai_summary·생성 시각·모델명)이 함께 저장되고, 스키마 이행은 alembic 리비전 4개로 관리한다. 복합 UNIQUE 2건 — applications(job_posting_id, email) · interviewer_assignments(application_id, interviewer_id).
 
 ---
 
