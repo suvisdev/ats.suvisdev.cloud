@@ -1,7 +1,7 @@
 # ⚠️ 이 파일은 minahdev 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
 owner: minahdev
 name: 김민아
-domain: 앱
+domain: 앱·프론트
 color: "#bb9af7"
 cards:
   - title: "백엔드 분담 큐 (B2 → D1 → D6)"

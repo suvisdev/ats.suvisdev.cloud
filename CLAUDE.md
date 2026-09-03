@@ -25,14 +25,16 @@
   `title/feature/status(doing|done)/done(날짜)/note/detail(펼침 상세)`.
 - `_data/feedback/<owner>.yml` — 팀원별 피드백, 같은 소유 규칙.
 
-## 팀 (도메인 오너제, ADR-0007)
+## 팀 (도메인 오너제, ADR-0007 — 2026-09-03 역할 개편)
 | owner | 이름 | 도메인 |
 |---|---|---|
-| bestcow | 이재우 (팀장) | 인프라·총괄 |
+| suvisdev | 진수택 (팀장) | **인프라·총괄(AWS)** ← 이 머신의 사용자 |
 | woojeongalex | 이우정 | 백엔드 |
-| suvisdev | 진수택 | **에이전트** ← 이 머신의 사용자 |
-| cloverky | 박소연 | 프론트엔드 |
-| minahdev | 김민아 | 앱 |
+| cloverky | 박소연 | 에이전트 |
+| minahdev | 김민아 | 앱·프론트 |
+
+이재우(bestcow)는 팀에서 빠짐 — 칸반의 과거 done 카드는 타임라인 이력
+보존을 위해 그대로 둔다(현행 역할 표에는 미등재).
 
 이 머신에서 작업할 때는 `_data/kanban/suvisdev.yml`·`_data/feedback/suvisdev.yml`만
 수정한다. 다른 팀원 파일은 읽기 전용.

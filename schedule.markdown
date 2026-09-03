@@ -13,11 +13,10 @@ permalink: /schedule/
 
 | 도메인 | 이름 | 담당 영역 | 주요 기술 |
 |--------|------|----------|----------|
-| 인프라·총괄 | 이재우 | 클라우드 인프라 구성 및 배포 — 전원의 선행조건 | EC2, S3, SES, SQS, GitHub Actions |
+| 인프라·총괄 (팀장) | 진수택 | 클라우드 인프라 구성 및 배포 — 전원의 선행조건 | EC2, S3, SES, SQS, GitHub Actions |
 | 백엔드 | 이우정 | 코어 API(인증·공고·지원서·평가·검색)·단계 전환 규칙·인덱스 튜닝 | FastAPI, PostgreSQL, alembic |
-| 프론트엔드 | 박소연 | React UI, 칸반 드래그·낙관적 업데이트, 공개 페이지 | React, TypeScript, Vercel |
-| 에이전트 | 진수택 | 도구 호출 에이전트·AI 요약·RAG·일정 자동화·AI 면접·인적성 | Python, Claude API, pgvector |
-| 앱 | 김민아 | 같은 API의 두 번째 클라이언트(Android APK 데모) | Flutter, Dart |
+| 에이전트 | 박소연 | 도구 호출 에이전트·AI 요약·RAG·일정 자동화·AI 면접·인적성 | Python, Claude API, pgvector |
+| 앱 · 프론트엔드 | 김민아 | React 웹 + Flutter 앱(Android APK 데모) — 같은 API의 두 클라이언트 | React, TypeScript, Flutter, Dart |
 
 ---
 
