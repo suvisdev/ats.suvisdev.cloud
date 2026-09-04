@@ -14,7 +14,7 @@ permalink: /
 {: .fs-5 .fw-300 }
 
 [목차 보기](/toc/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[GitHub](https://github.com/suvisdev/ats.suvisdev.cloud){: .btn .fs-5 .mb-4 .mb-md-0 }
+[GitHub](https://github.com/Seuk-Team/jekyll){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -24,7 +24,7 @@ permalink: /
 <tr><td class="cv-label">개발 기간</td><td><div class="cv-main">2026년 8월 20일 (목) ~ 2026년 10월 27일 (화)</div><div class="cv-sub">총 69일 · 10주, 애자일 스크럼 (2주 1스프린트 · 총 5스프린트)</div></td></tr>
 <tr><td class="cv-label">개발팀 : SEUK</td><td><div class="cv-main">진수택 · 이우정 · 김민아 · 박소연</div><div class="cv-sub">4명</div></td></tr>
 <tr><td class="cv-label">문서 작성일</td><td><div class="cv-main">2026년 8월 20일</div></td></tr>
-<tr><td class="cv-label">깃허브 주소</td><td><div class="cv-main"><a href="https://github.com/Team-Seuk/Arda">github.com/Team-Seuk/Arda</a></div><div class="cv-sub">문서 저장소 — <a href="https://github.com/suvisdev/ats.suvisdev.cloud">github.com/suvisdev/ats.suvisdev.cloud</a></div></td></tr>
+<tr><td class="cv-label">깃허브 주소</td><td><div class="cv-main"><a href="https://github.com/Seuk-Team/Arda">github.com/Seuk-Team/Arda</a></div><div class="cv-sub">문서 저장소 — <a href="https://github.com/Seuk-Team/jekyll">github.com/Seuk-Team/jekyll</a></div></td></tr>
 <tr><td class="cv-label">문서 사이트</td><td><div class="cv-main"><a href="https://ats.suvisdev.cloud">ats.suvisdev.cloud</a></div></td></tr>
 <tr><td class="cv-label">데모 사이트</td><td><div class="cv-main"><a href="https://arda.seuk.cloud">arda.seuk.cloud</a></div><div class="cv-sub">Vercel 배포 · API api.arda.seuk.cloud</div></td></tr>
 </table>
