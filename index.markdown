@@ -26,7 +26,7 @@ permalink: /
 <tr><td class="cv-label">문서 작성일</td><td><div class="cv-main">2026년 8월 20일</div></td></tr>
 <tr><td class="cv-label">깃허브 주소</td><td><div class="cv-main"><a href="https://github.com/Seuk-Team/Arda">github.com/Seuk-Team/Arda</a></div><div class="cv-sub">문서 저장소 — <a href="https://github.com/Seuk-Team/jekyll">github.com/Seuk-Team/jekyll</a></div></td></tr>
 <tr><td class="cv-label">문서 사이트</td><td><div class="cv-main"><a href="https://ats.suvisdev.cloud">ats.suvisdev.cloud</a></div></td></tr>
-<tr><td class="cv-label">데모 사이트</td><td><div class="cv-main"><a href="https://arda.seuk.cloud">arda.seuk.cloud</a></div><div class="cv-sub">Vercel 배포 · API api.arda.seuk.cloud</div></td></tr>
+<tr><td class="cv-label">서비스</td><td><div class="cv-main"><a href="https://seuk.suvisdev.cloud">seuk.suvisdev.cloud</a></div><div class="cv-sub">Vercel 배포 · API api.seuk.suvisdev.cloud (Swagger /docs)</div></td></tr>
 </table>
 
 ---
