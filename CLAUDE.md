@@ -7,7 +7,7 @@
   **개인 프로젝트(Mova·Gildle 등) 콘텐츠는 여기 넣지 않는다.** 반대로
   Arda/ATS 콘텐츠는 개인 지킬이 아니라 항상 이 저장소에 넣는다
   (2026-09-03 확정 방침 — suvisjk/CLAUDE.md 상단 블록과 쌍).
-- 코드 저장소는 `Team-Seuk/Arda`(private), 데모는 arda.seuk.cloud.
+- 코드 저장소는 `Seuk-Team/Arda`(public), 서비스는 seuk.suvisdev.cloud · API는 api.seuk.suvisdev.cloud.
 
 ## 기술
 - Jekyll + **just-the-docs** 테마(dark), Ruby는 rbenv.
